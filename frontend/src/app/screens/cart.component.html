@@ -1,0 +1,59 @@
+<ng-http-loader></ng-http-loader>
+
+
+<div *ngIf="totalCount>0;else elseBlock">
+    <div class="row top">
+        <div class="col-2">
+            <ul *ngFor="let item of finalArray">
+                <li class="row">
+                    <div>
+                        <img src={{item.image}} class="small">
+                    </div>
+
+                    <div class="min-30">
+                        {{item.name}}
+                    </div>
+
+                    <button (click)="removeItem(item._id)">Delete</button>
+                </li>
+            </ul>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+<ng-template #elseBlock>
+    Cart is Empty Start the Shopping
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div *ngIf="totalCount>0">
+    <div class="row top">
+        <div class="col-2">
+            <ul *ngFor="let item of finalArray">
+                <li class="row">
+                    
+                    <div>
+                        <img src={{item.image}} alt={{item.name}} class="small">
+                    </div>
+
+                    <div class="min-30">
+                        {{item.name}}
+                    </div>
+                
+                </li>
+            </ul>
+        </div>
+    </div>
+</div> -->

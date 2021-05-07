@@ -1,0 +1,27 @@
+<!-- <ng-http-loader></ng-http-loader> -->
+<div class="row center">
+     <div *ngFor="let obj of products">
+          
+          
+          <div class="card">
+               <a [routerLink]="['/detail',obj._id]">
+                   <img src={{obj.image}}>
+               </a>
+
+               <div class="card-body">
+                   <h2>{{obj.name}}</h2>
+                   
+                   <!-- rating -->
+                   <rating [product_rating]="obj.rating" 
+                           [product_numReviews]="obj.numReviews"></rating>
+
+                   <div class="price">
+                           Price $ {{obj.price}}
+                   </div>
+               </div>
+
+          </div>
+     </div>
+</div>
+
+

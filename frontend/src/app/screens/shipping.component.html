@@ -1,0 +1,46 @@
+<div>
+    <checkout [signin]="true" [shipping]="true" [payment]="false" [order]="false"></checkout>
+
+
+    <form [formGroup]="shippingAddress" (ngSubmit)="shipping()" class="form">
+        <div>
+            <h1>Shipping Address</h1>
+        </div>
+
+        <div>
+            <label>Full Name</label>
+            <input type="text" formControlName="fullName" required>
+        </div>
+
+        <div>
+            <label>Address</label>
+            <input type="text" formControlName="address" required>
+        </div>
+
+        <div>
+            <label>City</label>
+            <input type="text" formControlName="city" required>
+        </div>
+
+
+        <div>
+            <label>Country</label>
+            <input type="text" formControlName="country" required>
+        </div>
+
+        <div>
+            <label>Pin Code</label>
+            <input type="text" formControlName="pinCode" required>
+        </div>
+
+        <div>
+            <label></label>
+            <button type="submit" class="primary">Continue</button>
+        </div>
+
+
+
+    </form>
+
+
+</div>

@@ -1,0 +1,35 @@
+<!--
+    in below HomeScreen Presentation, we have following CSS Classes
+
+    1) grid-container
+
+    2) row
+
+    3) brand
+
+    4) center
+-->
+<ng-http-loader></ng-http-loader>
+
+<div class="grid-container">
+    <header class="row">
+        
+        <div>
+            <a [routerLink]="['/']" class="brand">AshokIT</a>
+        </div>
+        
+        <div>
+            <a [routerLink]="['/cart']">cart <span class="badge">{{countVar}}</span> </a>
+            <a [routerLink]="['/signin']">signin</a>
+        </div>
+    
+    </header>
+
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+
+    <footer class="row center">
+        copyright@ashokit.in
+    </footer>
+</div>

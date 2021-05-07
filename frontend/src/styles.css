@@ -1,0 +1,244 @@
+.checkout-steps > div{
+   border-top: 0.3rem solid #c0c0c0;
+   color: #c0c0c0;
+   font-weight: bold;
+   flex: 1;
+   padding: 1rem;
+}
+
+.checkout-steps > div.active{
+   border-top-color: #f08000;
+   color: #f08000;
+}
+
+
+
+
+
+
+html{
+  font-size: 62.5%;          /* default font-size is 16px, intensionaly want to reduce to 10px*/
+  box-sizing: border-box;    /* to overcome border issues, we will use CSS3 */
+}
+
+body{
+  font-size: 1.6rem;        /* 10px = 1rem*/
+  margin: 0;
+  font-family:  Helvetica,Arial, sans-serif;
+  height: 100vh;           /* vh=> view port height
+                                    responsive web design */
+}
+
+.grid-container{
+   display: grid;
+   grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+}
+
+header{
+   grid-area: "header";
+   background-color: #203040;
+}
+
+main{
+    grid-area: "main";
+    padding: 1rem;
+} 
+
+footer{
+   grid-area: "footer";
+   background-color: #203040;
+   color: #ffffff;
+}
+
+
+.row{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-content: center;
+}
+
+.row.center{
+  justify-content: center;
+}
+
+a.brand{
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff; 
+}
+
+a{
+  text-decoration: none;
+  color: #ffffff;
+  margin: 1rem;
+}
+
+a:hover{
+  color: chocolate;
+}
+
+.card{
+  border: 0.1rem solid #c0c0c0;
+  background-color: #f8f8f8;
+  margin: 1rem;
+  border-radius: 0.5rem;
+}
+
+.card-body{
+   padding: 1rem;
+   text-align: center;
+}
+
+.card-body>*{
+  margin-bottom: 0.5rem;
+}
+
+.price{
+   font-size: 2rem;
+}
+
+.rating span{
+   color: #ecb00a;
+   margin: 0.1rem;
+}
+
+.rating span:last-child{
+  color: #404040;
+}
+
+.back_result{
+  color: orange;
+  font-size: 2rem;
+}
+
+.row.top{
+  align-items: flex-start;
+}
+
+.col-2{
+  flex: 2 1 50rem;
+}
+
+.col-1{
+  flex: 1 1 25rem;
+}
+
+img.large{
+    width: 100%;
+}
+
+img.small{
+  max-width: 5rem;
+  width: 100%;
+}
+
+.min-30{
+  width: 30rem;
+  max-width: 100%;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+li{
+  margin-top: 1rem;
+}
+
+.success {
+  color: #20a020;
+}
+
+.danger {
+  color: #a02020;
+}
+
+button.primary {
+  background-color: #f0c040;
+}
+button.block {
+  width: 100%;
+}
+
+select,
+button{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+button:hover,
+select:hover {
+  border: 0.1rem #404040 solid;
+}
+
+.badge{
+  background-color: red;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+
+.form{
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.form > div{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.form label{
+  margin: 1rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,123 @@
+TypeScript
+==========
+
+1) OOPS
+
+2) Modules
+
+3) NameSpaces
+
+4) Generics
+
+5) Interfaces
+
+6) Keywords in TypeScript
+
+        => this
+
+        => super
+
+        => readonly
+
+
+OOPS
+====
+
+1) classes
+
+2) objects
+
+3) inheritance
+
+    => single level inheritance
+
+    => multi level inheritance
+
+    => multiple inheritance
+
+    => hirarichal inheritance
+
+    => hybrid inheritance
+
+4) polymorphism
+
+    => function overloading
+
+    => function overriding
+
+5) Encapsulation
+
+
+6) Abstraction
+
+
+Interfaces
+==========
+
+    - if we know only declaration, but we don't know implentation then we will choose "interfaces".
+
+    - implentation known by either "JSON", or "classes".
+
+    - we will declare interfaces by using "interface" keyword.
+
+    - we will provide implentation to interfaces by using "implements" keyword
+
+
+NameSpaces
+==========
+
+    - logical grouping of similar functionalities called as NameSpace / module.
+
+    - NameSpaces have "global scope".
+
+    - NameSpaces also called as "external" modules.
+
+    - we will declare NameSpaces by using "namespace" keyword..
+
+    - we can import namespace by using following syntax.
+
+    ///<ref path="file">
+
+
+
+modules
+=======
+    - logical grouping of similar functionalities called as module.
+
+    - modules have local scope.
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

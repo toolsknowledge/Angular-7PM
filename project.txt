@@ -1,0 +1,1381 @@
+CheckoutComponent
+-----------------
+
+1) signin
+
+
+2) shipping
+
+
+3) payment
+
+
+4) order
+
+
+Child
+checkout.component.ts
+checkout.component.html
+
+
+shippingComponent
+-----------------
+
+Parent
+shipping.component.ts
+shipping.component.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Step 1.
+    create the AWS Account
+
+    https://aws.amazon.com/   (credit card / debit card information)
+
+
+Step 2.
+    create S3 Bucket in AWS
+
+    S3 bucket is nothing but repository
+
+
+Step 3.
+    deploy images to S3 Bucket
+
+    => https://ng7pm.s3.ap-south-1.amazonaws.com/p1.jpg
+
+    => https://ng7pm.s3.ap-south-1.amazonaws.com/p2.jpg
+
+    => https://ng7pm.s3.ap-south-1.amazonaws.com/p3.jpg
+
+    => https://ng7pm.s3.ap-south-1.amazonaws.com/p4.jpg
+
+    => https://ng7pm.s3.ap-south-1.amazonaws.com/p5.jpg
+
+    => https://ng7pm.s3.ap-south-1.amazonaws.com/p6.jpg
+
+
+Step 4.
+    create the database in mongodb
+
+    URL : https://account.mongodb.com/account/login
+
+    database name  : ng7pm
+
+    collection name : products
+
+    user name : admin
+
+    password : admin
+
+    connection URL : mongodb+srv://admin:admin@miniprojectdb.nzphu.mongodb.net/ng7pm?retryWrites=true&w=majority
+
+Step 5.
+    create the node server
+
+    => nodejs used to develop the servers
+
+            Http Server
+
+            TCP Server
+
+    => we will develop node server by using JavaScript.
+
+    => node supports the modules
+
+        1) express
+
+            - express used to develop the rest services.
+
+            Ex.
+                    GET
+                    POST
+                    PUT
+                    DELETE
+        2) cors
+
+            - cors library used to enable the ports communication.
+
+        3) mongodb
+
+            - mongodb used to connect to mongodb database.
+        
+        4) body-parser
+
+            - body-parser module used to read the data from client application
+
+    a) create the directory (folder)
+
+        Ex.
+                backend
+
+    b) switch to backend directory
+
+        > cd backend
+
+    c) download the libraries
+
+            => express
+
+            => cors
+
+            => mongodb
+
+            => body-parser
+
+        > yarn add express cors mongodb body-parser --save
+
+        all the libraries downloads to "node_modules" folder in current path.
+
+    d) implement the node server
+
+        Ex.
+            server.js
+
+    e) start the server
+
+        > node server
+
+    f) test the rest api by using "Postman"
+
+        > http://localhost:8080/api/products
+
+
+16-01-2021
+==========
+
+HomeScreen
+==========
+
+    => Services  (RxJS)
+
+    => CSS3 & HTML5     (Responsive Web Design)
+
+    => Font Awasome   (Rating)
+
+    => communication Between Components
+
+    => Single Page Applications  (Routing)
+
+    => State Management (NgRx)
+
+
+step 1.
+    create the angular application
+
+    > ng new frontend
+
+
+step 2.
+    create the service to consume following rest api call
+
+    => http://localhost:8080/api/products
+
+    **********************************************
+    frontend
+           src
+             app
+               modal
+                product.ts
+               services
+                 products.service.ts
+    ***********************************************
+
+    finally "Product" modal is ready
+
+    finally "ProductsService" is ready with "getProducts()" function.
+
+
+17-03-2021
+==========
+
+    => AppComponent is the default Component.
+
+        1) app.component.ts
+
+           app.component.html
+
+           app.component.css
+
+    => we will define global styles in "styles.css" file
+
+    => we will write presentation logic for HomeScreen in "app.component.html"
+
+    => global styles applicable to entire project.
+
+20-03-2021
+==========
+
+Single Page Application
+-----------------------
+    -loading one component to another component without "refreshing" called as Single Page Application.
+
+    -movement of components in Single Page Application called as "Routing".
+
+    -"Routes" is the predefined class, used to implement the Routing.
+
+    -Routes class present in "RouterModule".
+
+    -Routes and RouterModule present in "@angular/router"
+     package.
+
+
+1) create the child screens
+
+    > ng g c screens/products --skip-tests --selector=products -is --flat true
+
+    > ng g c screens/details --skip-tests --selector=details -is --flat true
+
+    > ng g c screens/cart --skip-tests --selector=cart -is --flat true
+
+
+2) define <router-outlet> directive
+
+    - <router-outlet></router-outlet> is the directive, used to load the one component to another component.
+
+    - <router-outlet></router-outlet> directive behaves like placeholder
+
+3) implement the Routings
+
+    *********************************************
+    frontend
+           src
+             app
+               routes
+                  app.routes.ts
+    *********************************************
+
+        "appRoutes" is the custom variable defines the Routing.
+
+    1)  "/"   => ProductsComponent
+
+    2) "/details"   => DetailsComponent
+
+    3) "/cart"     => CartComponent
+
+
+4) execute the Routes
+
+    app.module.ts
+
+
+22-03-2021
+==========
+State Management
+----------------
+
+1) http://localhost:8080/api/products
+
+
+2) modal
+
+
+3) actions
+
+
+4) effects
+
+
+5) reducer  (state)
+
+
+6) selector
+
+
+7) subscription and dispatching
+
+
+
+step 1.
+    download node modules
+
+    1) @ngrx/effects
+
+    2) @ngrx/store
+
+    > cd frontend
+
+    > yarn add @ngrx/effects @ngrx/store --save
+
+
+step 2.
+    create the modal
+
+    ***************************************
+    frontend
+           src  
+             app
+               modal 
+                  products.modal.ts
+    **************************************
+
+        finally "Product" modal is ready
+
+
+step 3.
+    create the actions.
+
+    (tasks)
+
+    => hit the server
+
+    => catch the posRes
+
+    => catch the errRes
+
+**********************************
+frontend
+      src
+        app
+          actions
+             products.actions.ts
+**********************************
+
+        finally "ProductsActionTypes" ready.
+
+        => ProductsLoading
+
+        => ProductsLoadingSuccess
+
+        => ProductsLoadingFail
+
+
+
+
+create the effects
+==================
+
+*******************************************
+frontend
+       src
+         app  
+           index.ts
+
+           effects
+                products.effects.ts
+*******************************************
+
+finally "ProductsEffects" ready with "getProducts" variable
+
+
+
+create the reducer
+==================
+
+**********************************
+frontend
+       src
+         app
+           reducer
+              products.reducer.ts
+***********************************
+
+        - finally "productsReducer" is ready
+
+
+create the selector
+==================
+
+****************************************
+frontend
+       src
+         app
+           selector
+              products.selector.ts
+****************************************
+
+    finally "allProducts" selector is ready
+
+
+
+subscription and dispatching
+============================
+
+"ProductsComponent" responsible to perform subscription as well as dispatching
+
+
+23-03-2021
+==========
+
+    - complete business logic present in ProductsComponent.
+
+    - to simplify business logic, we must separate "Rating" logic.
+
+    - so, we need to RatingComponent.
+
+    - RatingComponent responsible for to implement only Rating logic.
+
+    - in this case
+
+        ProductsComponent is the Parent Component.
+
+        RatingComponent is the Child Component.
+
+    - we can provide communication between Parent component to child component by using @Input() decorator.
+
+
+****************************************
+frontend
+       src
+         app
+           screens
+               rating.component.ts
+               rating.component.html
+****************************************
+
+                                        Task2 : Details Screen Design  (10days)
+
+    => receive id from ProductsComponent
+
+    => send id to server
+
+    => receive the response from server
+
+    => populate response to DetailsComponent with CSS3 (Responsive Web Design).
+
+
+1) develop rest api
+
+    => http://localhost:8080/api/products/id
+
+
+2) state management
+
+        => actions
+
+        => effects
+
+        => reducer
+
+        => selector
+
+        => dispatch & subscribe
+
+3) custom module   (detailsModule)
+
+4) lazy loading
+
+5) Authenticati
+
+6) Single Page Application
+
+7) CSS3
+
+8) test "ngrx" package
+
+
+
+
+
+
+
+
+
+=> Single Page Applications   (4pm)
+
+
+=> Forms with Validations
+
+
+
+
+
+                                        ****** Single Page Applications ******
+    -loading one component to another component without refreshing whole webpage called as Single Page Application.
+
+    -navigation of components in Single Page Application called as "Routing".
+
+    -"Routes" is the predefined class, used to implement the Routing.
+
+    -"Router" is the predefined class, used to navigate from one component to another component.
+
+    -"Routes" and "Router" available in "RouterModule".
+
+    -"Routes","Router" and "RouterModule" available in "@angular/router" package.
+
+
+step 1.
+    create the components
+
+    => MainComponent
+
+    => PageoneComponent
+
+    => PagetwoComponent
+
+    => PagethreeComponent
+
+
+
+    - MainComponent acting as Parent Component.
+
+    - PageoneComponent, PagetwoComponent and PagethreeComponent are children components.
+
+> cd spaDemo
+
+> ng g c main --skip-tests -is --selector=spa-main  --flat true
+
+> ng g c pageone --skip-tests -is --selector=pageone --flat true
+
+> ng g c pagetwo --skip-tests -is --selector=pagetwo --flat true
+
+> ng g c pagethree --skip-tests -is --selector=pagethree --flat true
+
+step 2.
+    implement the business logic in child components.
+
+
+step 3.
+    create the router links
+
+    main.component.html
+
+
+        => "/page_one"
+
+        => "/page_two"
+
+        => "/page_three"
+
+step 4.
+    implement the routing
+
+
+    app.routes.ts
+
+    finally "appRoutes" routing const is ready.
+
+
+step 5.
+    load the routings
+
+    app.module.ts
+
+
+                    ***** Nested Routing ********
+
+step 1.
+    create the Components
+
+        => ChildoneComponent
+
+        => ChildtwoComponent
+
+        => ChildthreeComponent
+
+
+step 2.
+    implement the business logic in target components
+
+
+step 3.
+    create the router links
+
+step 4.
+    implement the routing
+
+    app.routes.ts
+
+                                ***** Routing Parameters *****
+
+    - "ActivatedRoute" is the predefined class, used to read the routing Parameters.
+
+
+                            ****** Routing Guards ******
+
+1) CanActivate
+
+        - provides the Authentication while entiring main routes.
+
+
+2) CanDeactivate
+
+        - provides the Authentication while leaving the main routes
+
+3) CanActivateChild
+
+        - provides the Authentication while entiring in child routes
+
+
+Note : we will implement Routing Guards with the help of services
+
+
+auth.guards.ts
+
+                                **** Lazy Loading ****
+
+        - loading of heavy modules based on customer demand, called as lazy loading.
+
+1) create the project
+
+        > ng new lazy-project
+
+2) switch to project
+
+        > cd lazy-project
+
+3) create the components
+
+        1) main.component.ts
+           main.component.html
+
+           pageone.component.ts
+           pageone.component.html
+
+
+4) create the module
+
+            url :  https://restcountries.eu/rest/v2/all
+
+            > yarn add ng-http-loader --save
+
+
+            countries.modal.ts
+
+            countries.service.ts
+
+            countries.component.ts
+            countries.component.html
+
+            countries.module.ts
+
+
+
+            finally "Countries" modal is ready.
+
+            finally "countriesService" is ready with getCountries() function.
+
+            finally countriesComponent is ready
+
+            finally countriesModule also ready
+
+
+5) implement the CanLoad Permission            
+
+    auth.guard.ts
+
+    finally "authGuard" service is ready.
+
+6) implement the routing
+
+    app.routes.ts
+
+
+
+
+
+
+
+                                        ****** Details Screen ******
+
+=> read the products id in DetailsComponent
+
+    when ever we click the images in ProductsComponent, we must pass "id" from ProductsComponent to DetailsComponent.
+
+
+=> develop rest api based on id
+
+        => http://localhost:8080/api/products/id
+
+
+=> implement the state management
+
+        1) modal
+
+                ****************************
+                modal
+                    product.ts
+                ****************************
+
+                finally "Product" modal is ready
+
+
+        2) service
+
+                *****************************************
+                services
+                    detail.service.ts
+                *****************************************
+
+                        finally "detailService" is ready with "getProductDetails(id)" function.
+
+
+
+
+        3) actions
+
+                *****************************************
+                actions
+                      detail.action.ts
+                *****************************************
+
+                finally "DetailsActions" enum is ready.
+
+                finally "DetailsActionsType" is ready with following classes.
+
+                        @DetailsLoading
+                        @DetailsLoadingSuccess
+                        @DetailsLoadingFail
+
+
+
+        4) effects
+
+                ***************************************
+                effects
+                    detail.effects.ts
+                ****************************************
+
+                finally "detailsEffects" is ready with "getDetailProduct" variable
+
+
+        5) reducer
+                **************************************
+                reducer
+                     detail.reducer.ts
+                **************************************
+
+                finally "detailsReducer" is ready.
+
+        6) selector
+
+              **************************************
+              selector
+                    detail.selector.ts
+              **************************************
+
+                finally "detailSelector" is ready
+
+
+
+        7) dispatching and subscription
+
+            *******************************************
+            screens
+                  DetailComponent
+            *******************************************
+
+        8) CSS3 implementation to DetailComponent
+
+
+Cloud Deployment
+================
+
+1) backend Deployment
+
+
+2) frontend Deployment
+
+
+ backend Deployment
+ ==================
+
+    => initilize the repo.
+
+            https://github.com/toolsknowledge/ecomm_backend.git
+
+
+    => configure port number in node server
+            
+            Ex.
+            let port = process.env.PORT || 8080;
+
+
+    => push the code the AWS
+
+
+frontend Deployment
+===================
+1) create the production build
+
+	> ng build
+
+		if production build success we will get "dist" folder.
+
+
+
+2) create the s3 bucket
+
+	ashokit7pm bucket is ready.
+
+	Bucket Policy:
+
+		{
+    "Statement": [
+        {
+            "Sid": "AllowPublicRead",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::ashokit7pm/*"
+            ]
+        }
+    ]
+}
+
+
+3) modify the package.json file
+
+
+    scripts:{
+
+        "aws-deploy":"aws s3 sync dist/frontend/ s3://ashokit7pm"
+    }
+
+
+4) create the aws user
+
+    once if user is ready following parameters are usable
+
+        1) Access Key id
+
+        2) Secret Access Key
+
+5) install aws cli
+
+    Ex.
+            AWSCLISetup.exe
+
+6) execute the following command in aws cli
+
+
+    > cd frontend
+
+    > aws configure
+
+    > ng build && npm run aws-deploy
+
+
+Pending Topics
+==============
+
+1) Add to Cart
+
+
+2) Sign In
+
+
+3) Registration
+
+
+4) Payment Gateways
+
+
+31-03-2021
+==========
+
+CartScreen Design
++++++++++++++++++
+
+=> when ever we click the "add to cart" button, we must navigate to CartScreen with two parameters
+
+    @_id
+    @qty
+
+
+=> implement State Management with "NgRx" Package.
+
+        1) modal
+
+                ***********************************
+                frontend
+                       src
+                          app
+                            modal
+                              cart.modal.ts
+                ***********************************
+
+
+        2) service
+
+                **************************************
+                frontend
+                       src
+                         app
+                           services
+                              cart.service.ts
+                *************************************
+
+        3) actions
+               ****************************************
+               frontend
+                      src
+                        app
+                          actions
+                             cart.actions.ts
+                **************************************
+
+                finally "CartActions" enum is ready.
+
+                finally "CartActionTypes" are ready.
+
+                            @CartLoading
+                            @CartLoadingSuccess
+                            @CartLoadingFail
+
+
+        4) effects
+                ***************************************
+                frontend
+                       src
+                         app
+                           effects
+                              cart.effects.ts
+                ***************************************
+                    finally "getCartItems" effect is ready
+
+        5) reducer   (diff)
+
+                *********************************************
+                frontend
+                      src
+                        app 
+                          reducer
+                             cart.reducer.ts
+                *******************************************
+                    finally "cartReducer" is ready
+
+
+        6) selector
+
+            ****************************************
+            frontend
+                   src
+                     app
+                       selector
+                          cart.selector.ts
+            ***************************************
+
+            finally "cartSelector" is ready
+
+        7) CartComponent
+
+
+=> populate "cart value" as "badge" in AppComponent.
+
+        8) Local Storage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cart Functionality
+===================
+
+1) read "qty" & "id", receiving from DetailComponent.
+
+
+2) create the Modal
+
+        => http://localhost:8080/api/products/{id}
+
+3) create the service
+
+
+4) create the actions  
+
+
+5) create the effects
+
+
+6) create the reducer
+
+
+7) create the selector
+
+
+8) access the state in "effects" and store into "localstorage"
+
+
+9) link the localstorage to "reducer"
+
+
+10) perform the dispatch and subscribe operations in "CartComponent"
+
+
+11) populate the localstorage value to AppComponent as "Badge" Value
+
+
+
+1) read the "qty" and "id" , receiving from "DetailsComponent".
+
+************************************
+frontend
+       src
+         app
+           screens
+              cart.component.ts
+              cart.component.html
+************************************
+
+2) create the modal
+
+    => http://localhost:8080/api/products/{id}
+
+
+************************************
+frontend
+       src
+         app
+           modal 
+              cart.modal.ts
+***********************************
+
+    - finally "CartModal" is ready
+
+
+3) create the service
+
+*****************************************
+frontend
+      src
+        app
+          services
+             cart.service.ts
+*****************************************
+
+        - finally "CartService" is ready with getCartItem(id) function
+
+
+4) create the actions
+
+    - our application requirements called as actions.
+
+    - in general, we will prepare the actions by using Enum and classes.
+
+
+********************************************
+frontend
+       src
+         app
+           actions
+               cart.actions.ts
+********************************************
+
+        => finally "CartActions" is ready
+
+        => finally "CartActionTypes" are ready.
+
+                    1) CartLoading
+
+                    2) CartLoadingSuccess
+
+                    3) CartLoadingFail
+
+
+Note : export above actions with the help of global export file.
+
+index.ts
+
+
+5) create the effects
+
+    - implementation of actions called as effects
+
+*******************************************
+frontend
+       src
+         app
+           effects
+              cart.effects.ts
+*******************************************
+
+        finally "CartEffets" is ready with "getCartItems" Observable.
+
+
+6) create the reducer
+
+*******************************************
+frontend
+       src
+         app
+           reducer
+             cart.reducer.ts
+*******************************************
+
+    finally "cartReducer" is ready.
+
+
+7) create the selector
+
+******************************************
+frontend
+       src
+         app
+           selector
+              cart.selector.ts
+******************************************
+
+    finally "cartSelector" is ready
+
+
+8) access the state in "effects" and store into "localstorage"
+
+
+                          
+
+using mongoose to create users in database
+==========================================
+   
+   - as a developer, we can interact with the mongodb database in 2 ways.
+
+    1) "mongodb" library
+
+    2) mongoose library
+
+
+    - mongodb library used to interact with the mongodb database without schema.
+
+    - mongoose library used to interact with the mongodb database with schema.
+
+
+=> download mongoose library
+
+    > cd backend
+
+    > yarn add mongoose --save
+
+
+=> define schema
+
+    *******************************
+    backend
+          model
+             userModel.js
+    *******************************
+
+
+=> create the sample data.
+
+***********************************
+backend
+      data.js
+***********************************
+
+    yarn add bcryptjs --save
+
+
+
+=> create the rest api with the help of moongoose
+
+    yarn add express-async-handler --save
+
+
+
+
+                        ************** sign in screen design *******************
+
+
+frontend
+       src
+         app
+           screens
+              signin.component.ts
+              signin.component.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+

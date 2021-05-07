@@ -1,0 +1,82 @@
+<!--
+    1) row
+
+    2) top
+
+    3) col-2
+
+    4) col-1
+
+    5) large
+-->
+
+<ng-http-loader></ng-http-loader>
+<div>
+    <a [routerLink]="['/']" class="back_result">Back to Results</a>
+
+    <div class="row top">
+        
+        <div class="col-2">
+            <img class="large" src={{final_product.image}} alt="{{final_product.name}}">
+        </div>
+
+        <div class="col-1">
+            <ul>
+                <li>
+                    <h1>{{final_product.name}}</h1>
+                </li>
+                <li>
+                    <rating [product_rating]="final_product.rating"  [product_numReviews]="final_product.numReviews"></rating>
+                </li>
+                <li>
+                    Price $ {{final_product.price}}
+                </li>
+
+                <li>
+                    Description {{final_product.description}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-1">
+            <div class="card card-body">
+                <ul>
+                    <li>
+                        <div class="row">
+                            <div>Price</div>
+                            <div class="price">$ {{final_product.price}}</div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="row">
+                            <div>Status</div>
+                            <div *ngIf="final_product.countInStock>0" class="success">Available</div>
+                            <div *ngIf="final_product.countInStock<=0" class="danger">Not Available</div>
+                        </div>
+                    </li>
+                    
+                    <div *ngIf="final_product.countInStock>0">
+                        <li>
+                            <div class="row">
+                                <div>Qty</div>
+                                <select [(ngModel)]="qty">
+                                    <option *ngFor="let x of dropdown_values">
+                                        {{x}}
+                                    </option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <button class="primary block" (click)="addToCart(final_product._id)">Add to Cart</button>
+                        </li>
+                    </div>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</div>

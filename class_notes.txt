@@ -1,0 +1,1111 @@
+02-03-2021
+==========
+1) Installation of Angular11
+
+2) create the Angular11 Project
+
+3) Directory Structure of Angular11 Project
+
+
+Installation of Angular11
+=========================
+1) download and install NodeJS
+
+    - npm is the tool, helps to install the Angular11.
+
+    - npm stands for node packaging manager.
+
+    - npm is the tool, present in NodeJS.
+
+
+website : https://nodejs.org/en/download/
+
+file    : node-v14.16.0-x64.msi
+
+
+2) install yarn tool
+
+    yarn is the tool, provided by facebook.
+
+    yarn tool, used to download the 3rd party libraries.
+
+    we will install yarn tool, by using following command.
+
+    > npm install -g yarn
+
+    - "-g" stands for global Installation.
+
+    current version of yarn tool is  yarn@1.22.10
+
+
+3) install Angular11
+
+    - we will install Angular11 by using following command.
+
+    > npm install -g @angular/cli
+
+    cli stands for command line interface
+
+    cli is the tool, provided by "google"
+
+    cli helps to create and execute the angular projects
+
+
+4) link the yarn tool to cli tool
+
+    > ng set --global packageManager=yarn
+
+
+5) install VisualStudioCode
+
+    - VisualStudioCode is the IDE
+
+    - VSCode Provided by Microsoft.
+
+    - VSCode IDE recomended to develop UI Applications
+
+    Ex.
+            angular
+            react
+            vuejs
+
+
+website : https://code.visualstudio.com/download
+
+file    :  VSCodeUserSetup-x64-1.53.2.exe
+
+
+
+create the first angular Application
+====================================
+step 1.
+
+    create the directory   (folder)
+
+    Ex.
+            Angular11@7   (open with VSCode)
+
+step 2.
+    create the angular project
+
+    > ng new firstApp
+
+    where "firstApp" is the name of the project
+
+step 3.
+    switch to angular application
+
+    > cd firstApp
+
+step 4.
+    execute the angular application
+
+    > ng s -o
+
+    "s" stands for serve
+
+    "-o" stands for open the default browser
+
+    the default port number of angular application is 4200
+
+Directory Structure of Angular Application
+==========================================
+
+e2e
+===
+    e2e stands for end to end.
+
+    e2e directory used to write the end to end test cases
+
+node_modules
+============
+    it containes libraries.
+
+    these libraries helps to execute the angular applications.
+
+
+src/app
+=======
+    it is used to deploy the angular applications
+
+    Ex.
+        single page applications
+
+        services
+
+        components
+
+        pipes
+
+        directives
+
+        ----
+        ----
+        ----
+
+src / app / app.module.ts
+=========================
+
+- above file we can call registration file.
+
+- above file we can call default module file.
+
+- as a angular developer, we must register our applications
+
+Ex.
+    components
+    services
+    ---
+    ---
+    ---
+
+src / app / app.component.ts
+
+            app.component.html
+
+            app.component.css
+
+            app.component.spec.ts
+
+=======================================
+
+    - when ever we create angular project, automatically "AppComponent" is the default component.
+
+    - all unit test cases files should have ".spec.ts" extension
+
+
+src/assets
+==========
+    - it is used to deploy the static resources.
+
+    Ex.
+
+        images
+
+        logos
+
+        xml files
+
+        json files
+
+        fonts
+
+src/environments
+================
+
+    - in general, we have following environments.
+
+    1) development environment
+
+    2) production environment
+
+    3) testing environment
+
+    - we can configure required environment here.
+
+src / favicon.ico
+=================
+
+    - this logo representing default logo of angular
+
+src / index.html
+================
+
+    - angular starts the extension from "index.html" file.
+
+    - "index.html" file is the main template.
+
+src / main.ts
+=============
+
+    - main.ts file acting as interface between index.html to app.module.ts file.
+
+    - angular starts the execution from index.html file
+
+    - index.html file immidiately invokes the "main.ts" file.
+
+    - main.ts file immidiately executes the app.module.ts file.
+
+    - app.module.ts file containes our applications registrations.
+
+    - based on our applications registrations, angular framework will execute the applications.
+
+src / polyfills.ts
+==================
+
+    - in general, we will prepare angular applications by using TypeScript.
+
+    - as a angular developer, we must convert TypeScript to Equalent JavaScript.
+
+    - polyfills acting as library, used to convert the TypeScript to Equalent JavaScript.
+
+src / styles.css
+================
+
+    - here, we can configure global styles.
+
+    - these styles applicable to entire angular application.
+
+src / test.ts
+=============
+
+    - this is the sample testing file.
+
+.browserslistrc
+===============
+
+    - it containes supporting browsers of Angular11
+
+angular.json
+============
+
+    - it describes angular application directory structure.
+
+karma.conf.js
+=============
+
+    - in general, we will write unit test cases by using karma tool.
+
+    - this file representing, configuration file of karma tool.
+
+package.json
+=============
+
+    - it is used to download the 3rd party libraries.
+
+
+tsconfig.app.json
+=================
+
+    - it is used to configure the application devel configurations
+
+
+tsconfig.json
+=============
+
+    - this file representing TypeScript configurations
+
+tsconfig.spec.json
+==================
+
+    - this file acting as controlling file for all test cases
+
+tslint.json
+===========
+
+    - this file acting as validator file for TypeScript.
+
+=======================================================================
+1) Components                                   OOPS
+
+2) Services                                     Modules
+
+3) Single Page Applications                     packages
+
+4) RxJS  (Rest API Calls)                           Workshop : debouncing & Throttling
+
+5) NgRx (State Management)
+========================================================================================
+
+ECommerce Application    (40 days)
+
+npx gitignore node
+==================
+    - used to avoid the movement of libraries to GitHub Repository.
+
+
+component
+=========
+    - simple typescript class behaves like component.
+
+    - angular applications are component based applications.
+
+    - because of components, code reusablility is "high" in "angular".
+
+    - components are "reusable".
+
+    - as a angular developer, we can provide communication between one component to another component.
+
+> ng new componentApp
+
+********************************************
+componentApp
+           src
+             app
+               first.component.ts
+               first.component.html
+
+
+               app.module.ts
+           index.html
+********************************************
+
+
+
+*****************************************************************
+multipleComponentApp
+                    src
+                       app
+                         components   
+                             mean.component.ts
+                             mean.component.html
+
+                             mern.component.ts
+                             mern.components.html
+
+                             mevn.component.ts
+                             mevn.components.html
+
+                             fullstack.component.ts
+                             fullstack.component.html
+                         app.module.ts
+                       index.html
+******************************************************************
+
+Services
+========
+    - Services are used to share the common business logic to multiple components.
+
+    - Services overcomes the data redundancy (duplicate code).
+
+    - communication between service to components called as dependency injection.
+
+
+***********************************************
+custServiceEx
+            src
+              app
+                services
+                    employee.service.ts
+                components
+                    comp.one.ts
+                    comp.one.html
+
+                    comp.two.ts
+                    comp.two.html
+
+                    comp.three.ts
+                    comp.three.html
+                app.module.ts
+               index.html
+*****************************************************
+
+
+Rest API Ex
+===========
+
+step 1.
+    create the modal object
+
+
+************************************************
+restAPIEx
+         src
+           app
+             modal
+                countries.modal.ts
+************************************************
+
+    finally "Country" modal is ready
+
+
+Step 2.
+    create the service
+
+**************************************************
+restAPIEx
+        src
+          app
+            services
+               countries.service.ts
+**************************************************
+
+        - finally "countriesService" is ready with "getContries()" function.
+
+
+step 3.
+    create the component.
+
+*********************************************************
+restAPIEx
+        src
+            app
+                components
+                    countries.component.ts
+                    countries.component.html
+*********************************************************
+
+
+Rest API Ex
+===========
+
+URL : https://www.w3schools.com/angular/customers.php
+
+
+step 1.
+    create the modal
+
+*******************************************************
+customersRestEx
+              src
+                app
+                  model
+                    customers.model.ts
+*****************************************************
+
+    finally "Customers" model is ready
+
+step 2.
+    create the service
+
+***************************************************
+customersRestEx
+                src
+                  app
+                    services
+                        customers.service.ts
+**************************************************
+
+    finally "customersService" is ready with "getCustomers()" function
+
+
+step 3.
+    create the component
+
+**********************************************************
+customersRestEx
+              src
+                app
+                  components
+                     customers.component.ts
+                     customers.component.html
+**********************************************************
+
+
+step 4.
+    download ng-http-loader module
+
+    => ng-http-loader is the "3rd" party module
+
+    => ng-http-loader module, used to show the "progressbar" while loading the data.
+
+    => ng-http-loader, we will download from "yarn" tool.
+
+
+    > cd customersRestEx
+
+    > yarn add ng-http-loader --save
+
+step 5.
+    register the component
+
+    app.module.ts
+
+step 6.
+    call the selector
+
+    index.html
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+10-03-2021
+=========
+step 1.
+    make the mongodb database ready.
+
+    => mongodb is the "NoSQL" database.
+
+    => mongodb won't support "SQL" and "PLSQL".
+
+    => mongodb supports "JSON".
+
+    => mongodb is the light weight database.
+
+*****************************************************************************
+        SQL                             NoSQL
+
+Ex.
+    Oracle                              MongoDB
+    MySQL
+    SQLServer
+
+    will support SQL and PLSQL          it won't support SQL and PLSQL
+
+
+    supports tables                     supports collections
+
+    support rows                        supports objects
+
+    supports databases                  supports databases
+
+    primary key                         _id  (auto generated id)
+***********************************************************************
+we can connect to mongodb database(cloud database) by using following URL.
+
+URL : https://account.mongodb.com/account/login
+
+
+database url : mongodb+srv://admin:admin@cluster0.fjor8.mongodb.net/ng9pm?retryWrites=true&w=majority
+
+collection name : products
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Spring Boot Integration with Angular
+====================================
+
+step 1.
+	download jdk
+
+	Ex.
+		openlogic-openjdk-11.0.8+10-windows-x64.zip
+
+
+step 2.
+	set the path environmental variable
+
+	path = C:\Users\samba\Downloads\openlogic-openjdk-11.0.8+10-windows-x64\openlogic-openjdk-11.0.8+10-win-x64\bin
+
+
+
+
+step 3.
+	run the following command in command prompt
+
+	> java -jar AngularDemo-0.0.1-SNAPSHOT.war
+
+
+step 4.
+	test the rest api by using Postman
+
+
+	=> http://localhost:8080/api/demo
+
+
+
+step 5.
+    create the angular project
+
+
+    > ng new springBootEx
+
+
+step 6.
+    create the model
+
+
+********************************************
+springBootEx
+            src
+               app
+                 model
+                    spring.model.ts
+********************************************
+
+
+    - finally "User" model is ready
+
+
+
+
+step 7.
+    create the service
+
+    > ng g s services/java --skip-tests --flat true
+
+    g stands for generate
+
+    s stands for service
+
+    --skip-tests means skip the generation of unit test cases
+
+    --flat true means don't deviate from directory structure.
+
+
+    finally "JavaService" is ready with "getUsers()" function.
+
+
+
+step 8.
+
+    create the component
+
+
+    > ng g c components/java  --skip-tests -is --selector=java --flat true
+
+
+    g stands for generate
+
+    c stands for component
+
+    --skip-tests means skip the unit test cases
+
+    -is stands for inline styles  (skip the css files generation)
+
+    --selector used to assign the selector
+
+    --flat-true means won't deviate from directory structure
+
+
+
+POST Request
+============
+
+    > ng g c components/uppercase --skip-tests --selector=uppercase -is --flat true
+
+
+
+HTTP Post Request
+=================
+
+1) create the angular project
+
+
+    > ng new httpPostEx
+
+
+2) switch to angular project
+
+    > cd httpPostEx
+
+
+3) download ng-http-loader module
+
+
+    > yarn add ng-http-loader --save
+
+
+4) create the model
+
+    ***********************************
+    httpPostEx
+             src
+               app
+                 model
+                    uppercase.model.ts
+    ************************************
+
+    finally "Uppercase" model is ready
+
+
+
+5) create the service
+
+    > ng g s services/uppercase --skip-tests --flat true
+
+
+
+6) create the component
+
+    > ng g c components/uppercase --skip-tests --selector=uppercase --flat true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

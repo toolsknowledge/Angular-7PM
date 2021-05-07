@@ -1,0 +1,24 @@
+<ng-http-loader></ng-http-loader>
+<table border="1"
+       cellpading="10px"
+       cellspacing="10px"
+       align="center">
+    <tr>
+        <th>SNO</th>
+        <th>Name</th>
+        <th>Capital</th>
+        <th>Region</th>
+        <th>Population</th>
+        <th>nativeName</th>
+        <th>Flag</th>
+    </tr>
+    <tr *ngFor="let obj of result;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{obj.name}}</td>
+        <td>{{obj.capital}}</td>
+        <td>{{obj.region}}</td>
+        <td>{{obj.population}}</td>
+        <td>{{obj.nativeName}}</td>
+        <td><img width="100px" height="50px" src={{obj.flag}}></td>
+    </tr>
+</table>
