@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { select, Store } from "@ngrx/store";
-import CartInterface from "../reducer/cart.reducer";
+import CartInterface, { CART_REMOVE_ITEM } from "../reducer/cart.reducer";
 import * as allActions from "../.";
 import { SpinnerVisibilityService } from "ng-http-loader";
+import CartID from "../modal/cartremove.model";
 
 @Component({
   selector:"cart",
@@ -12,12 +13,14 @@ import { SpinnerVisibilityService } from "ng-http-loader";
 export class CartComponent{
     qty:number;
     id:any;
-
-
+    selected_value:number;
     loading:boolean;
     error:string;
     finalArray:any;
     totalCount:number;
+
+    sub_total:any;
+
 
     constructor(private route:ActivatedRoute,
                 private store:Store<CartInterface>,
@@ -42,13 +45,29 @@ export class CartComponent{
           this.spinner.hide();
         });
 
-
     };
 
     removeItem(id:any){
-      console.log("Hello");
-      this.store.dispatch(new allActions.CartLoading(id,this.qty));
+      this.store.dispatch({
+         type:CART_REMOVE_ITEM,
+         payload: <CartID> {
+            "id" : id,
+            "qty" : this.qty
+         }
+      })
     };
 
+
+
+
+    arr:number[] = [];
+    createDropDown(count){
+      if( count > 0){
+          for(let i:number=1;i<=count;i++){
+            this.arr.push(i);
+          }
+      }
+      return this.arr;
+    }
 
 }

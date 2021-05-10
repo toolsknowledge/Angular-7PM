@@ -26,28 +26,17 @@ const initialState:CartInterface = {
     finalItems:localstorage_array
 };
 
-export function cartReducer(state=initialState,action:allActions.CartActionTypes):CartInterface{
+export const CART_REMOVE_ITEM:string = "CART_REMOVE_ITEM";
+
+export function cartReducer(state=initialState,action:allActions.CartActionTypes | any):CartInterface{
     switch(action.type){
-        // case allActions.CartActions.CartLoading:
-        //     return{
-        //         ...state,
-        //         finalItems:[],
-        //         error:"",
-        //         loading:false
-        //     }
-        //     break;
-
-
-        case allActions.CartActions.CartRemoveItem:
-            const id = action.id;
-            console.log( "id",id );
-            return{
-                ...state,
-                finalItems:state.finalItems.filter((element)=> {return element._id != id } )
-            }
-            break;
-
-
+       
+        case CART_REMOVE_ITEM:
+                return{
+                    ...state,
+                    finalItems:state.finalItems.filter((element)=> {return element._id != action.payload.id } )
+                }
+                break;
 
         case allActions.CartActions.CartLoadingSuccess:
             const item = action.payload;
@@ -76,14 +65,7 @@ export function cartReducer(state=initialState,action:allActions.CartActionTypes
                     loading:true
                 }
             }
-        // case allActions.CartActions.CartLoadingFail:
-        //     return{
-        //         ...state,
-        //         finalItems:[],
-        //         loading:false,
-        //         error:""
-        //     }
-        //     break;
+       
         default:
             return state;
     }

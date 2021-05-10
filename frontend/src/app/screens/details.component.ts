@@ -68,7 +68,7 @@ export class DetailComponent implements OnInit {
       }
     }
     return this.arr;
-}
+  }
 
 
   addToCart(id:any):any{
